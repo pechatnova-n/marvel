@@ -33,6 +33,7 @@ h1 {
 }
 
 
+
 .links li a {
     color: #000;
     text-decoration: none;
@@ -43,6 +44,10 @@ h1 {
 }
 
 .links li a:hover {
+    background: #c91919;
+}
+
+.links li a.active {
     background: #c91919;
 }
 

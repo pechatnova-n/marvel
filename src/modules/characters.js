@@ -1,6 +1,8 @@
 const characters = () => {
 
     const heroes = document.querySelector('.heroes');
+    let links = document.querySelector('.links');
+    let refers;
 
 
     const getData = () => {
@@ -12,6 +14,139 @@ const characters = () => {
                 let result = data;
                 console.log(data)
 
+                //films-set
+                const arrMovies = [];
+                data.forEach(item => {
+                    if(!item.movies) {
+                        console.log('no films')
+                    } else {
+                        item.movies.forEach(el => {
+                            arrMovies.push(el)
+                        })
+                    }
+                })
+
+                let moviesSet = new Set(arrMovies)
+                moviesSet = Array.from(moviesSet);
+                console.log(moviesSet)
+
+
+                moviesSet.forEach(el => {
+                    const link = document.createElement('li');
+
+                    link.innerHTML = `<a href="#">${el}</a>`
+
+                    links.append(link);
+                })
+
+
+
+
+
+
+
+                //choise film
+                refers = document.querySelectorAll('.links li a');
+                refers.forEach(refer => {
+                    refer.addEventListener('click',(e) => {
+                        e.preventDefault();
+                        refers.forEach(refer =>  refer.classList.remove('active'));
+                        refer.classList.add('active');
+
+
+
+                        heroes.innerHTML = ``;
+                        data.forEach((el, index) => {
+                            if(el.movies){
+                                el.movies.forEach(item => {
+                                    if(item == refer.innerText) {
+                                        const cart = document.createElement('div');
+                                        cart.classList.add('item');
+                                        heroes.append(cart);
+
+                                        cart.innerHTML = `
+                                            <div class="image">
+                        <img src="${result[index].photo}" alt="">
+                    </div>
+                                            <div class="info_block">
+                                                 <div class="line">
+                            <div class="tit">Актер: </div>
+                            <div class="descr">
+                                <p>${result[index].actors}</p>
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Год рождения: </div>
+                            <div class="descr">
+                                <p>${(result[index].birthDay ? result[index].birthDay : 'не известен')}</p>
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Год смерти: </div>
+                            <div class="descr">
+                                <p>${result[index].status !== 'alive' ? result[index].deathDay : 'Персонаж жив'}</p>
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Пол: </div>
+                            <div class="descr">
+                                <p>${result[index].gender}</p>
+                            </div>
+                        </div>
+                        
+                                                    <div class="line">
+                            <div class="tit">Имя: </div>
+                            <div class="descr">
+                                <p>${result[index].name}</p>
+                            </div>
+                        </div>
+                                                    <div class="line films">
+                            <div class="tit">Фильмы</div>
+                            <div class="descr">
+                                
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Разновидность: </div>
+                            <div class="descr">
+                                <p>${result[index].species}</p>
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Гражданство: </div>
+                            <div class="descr">
+                                <p>${(result[index].citizenship ? result[index].citizenship : 'не известно')}</p>
+                            </div>
+                        </div>
+                                                    <div class="line">
+                            <div class="tit">Статус: </div>
+                            <div class="descr">
+                                <p>${result[index].status}</p>
+                            </div>
+                        </div>
+                                                </div>
+                                         `
+
+
+                                            /*let descr = document.querySelector('.films .descr');
+
+                                            el.movies.forEach((item, index) => {
+                                                descr.innerHTML = `<p>${el.movies[index]}</p>`
+                                            })
+*/
+
+                                    }
+                                })
+                            }
+                        })
+
+
+
+                    })
+                })
+
+
+                //carts
                 data.forEach((item, index) => {
                     const cart = document.createElement('div');
                     cart.classList.add('item');
@@ -53,6 +188,16 @@ const characters = () => {
                                 <p>${result[index].name}</p>
                             </div>
                         </div>
+                        
+                        <div class="line films">
+                            <div class="tit">Фильмы</div>
+                            <div class="descr">
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
                         <div class="line">
                             <div class="tit">Разновидность: </div>
                             <div class="descr">
@@ -73,12 +218,26 @@ const characters = () => {
                         </div>
                     </div>
             `
+
+
+
+                   /* if(item.movies){
+                        let descr = document.querySelector('.films .descr');
+
+                        item.movies.forEach((item, index) => {
+                            descr.innerHTML = `<p>${item.movies[index]}</p>`
+                        })
+                    }*/
                 })
+
+
             })
     }
 
 
     getData();
+
+
 
 }
 
