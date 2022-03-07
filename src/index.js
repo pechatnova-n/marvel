@@ -1,5 +1,4 @@
-import burgerModule from "./modules/burger";
-import sliderModule from "./modules/slider";
+import characters from "./modules/characters";
 
-burgerModule();
-sliderModule();
+
+characters();

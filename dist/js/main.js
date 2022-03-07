@@ -1,0 +1,1 @@
+(()=>{"use strict";fetch("./dbHeroes.json").then((e=>e.json())).then((e=>{console.log(e)}))})();
