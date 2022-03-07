@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("best slider"),console.log("best 1111slider")})();
