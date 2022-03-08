@@ -124,22 +124,13 @@ const characters = () => {
                             </div>
                         </div>
                                                 <div class="line films">
-                            <div class="tit">Фильмы</div>
-                            <div class="descr">
-                                
-                            </div>
-                        </div>
+                                                    <div class="tit">Фильмы</div>
+                                                        <div class="descr">
+                                                             <p>${result[index].movies ? result[index].movies.toString() : "Нет фильмов" }</p>                                                          
+                                                        </div>
+                                                    </div>
                                             </div>
                                          `
-
-
-                                            /*let descr = document.querySelector('.films .descr');
-
-                                            el.movies.forEach((item, index) => {
-                                                descr.innerHTML = `<p>${el.movies[index]}</p>`
-                                            })
-*/
-
                                     }
                                 })
                             }
@@ -219,21 +210,11 @@ const characters = () => {
                          <div class="line films">
                             <div class="tit">Фильмы</div>
                             <div class="descr">
-                                
+                                <p>${result[index].movies ? result[index].movies.toString() : "Нет фильмов" }</p>
                             </div>
                         </div>
                     </div>
             `
-
-
-
-                   /* if(item.movies){
-                        let descr = document.querySelector('.films .descr');
-
-                        item.movies.forEach((item, index) => {
-                            descr.innerHTML = `<p>${item.movies[index]}</p>`
-                        })
-                    }*/
                 })
 
 
