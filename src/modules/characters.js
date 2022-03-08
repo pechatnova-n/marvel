@@ -66,65 +66,70 @@ const characters = () => {
 
                                         cart.innerHTML = `
                                             <div class="image">
-                        <img src="${result[index].photo}" alt="">
-                    </div>
+                                                <img src="${result[index].photo}" alt="">
+                                            </div>
                                             <div class="info_block">
-                                                 <div class="line">
-                            <div class="tit">Актер: </div>
+                                                <div class="line">
+                                                    <div class="tit">Имя: </div>
+                                                    <div class="descr">
+                                <p>${result[index].name}</p>
+                            </div>
+                                                </div>
+                                                <div class="line">
+                            <div class="tit">Реальное имя: </div>
                             <div class="descr">
-                                <p>${result[index].actors}</p>
+                                <p>${result[index].realName}</p>
                             </div>
                         </div>
-                                                    <div class="line">
-                            <div class="tit">Год рождения: </div>
-                            <div class="descr">
-                                <p>${(result[index].birthDay ? result[index].birthDay : 'не известен')}</p>
-                            </div>
-                        </div>
-                                                    <div class="line">
-                            <div class="tit">Год смерти: </div>
-                            <div class="descr">
-                                <p>${result[index].status !== 'alive' ? result[index].deathDay : 'Персонаж жив'}</p>
-                            </div>
-                        </div>
-                                                    <div class="line">
+                                                <div class="line">
                             <div class="tit">Пол: </div>
                             <div class="descr">
                                 <p>${result[index].gender}</p>
                             </div>
                         </div>
-                        
-                                                    <div class="line">
-                            <div class="tit">Имя: </div>
+                                                <div class="line">
+                            <div class="tit">Год рождения: </div>
                             <div class="descr">
-                                <p>${result[index].name}</p>
+                                <p>${(result[index].birthDay ? result[index].birthDay : 'не известен')}</p>
                             </div>
                         </div>
-                                                    <div class="line films">
-                            <div class="tit">Фильмы</div>
-                            <div class="descr">
-                                
-                            </div>
-                        </div>
-                                                    <div class="line">
-                            <div class="tit">Разновидность: </div>
-                            <div class="descr">
-                                <p>${result[index].species}</p>
-                            </div>
-                        </div>
-                                                    <div class="line">
-                            <div class="tit">Гражданство: </div>
-                            <div class="descr">
-                                <p>${(result[index].citizenship ? result[index].citizenship : 'не известно')}</p>
-                            </div>
-                        </div>
-                                                    <div class="line">
+                                                <div class="line">
                             <div class="tit">Статус: </div>
                             <div class="descr">
                                 <p>${result[index].status}</p>
                             </div>
                         </div>
-                                                </div>
+                                                <div class="line">
+                            <div class="tit">Год смерти: </div>
+                            <div class="descr">
+                                <p>${result[index].status !== 'alive' ? result[index].deathDay : 'Персонаж жив'}</p>
+                            </div>
+                        </div>
+                                                <div class="line">
+                            <div class="tit">Разновидность: </div>
+                            <div class="descr">
+                                <p>${result[index].species}</p>
+                            </div>
+                        </div>
+                                                <div class="line">
+                            <div class="tit">Актер: </div>
+                            <div class="descr">
+                                <p>${result[index].actors}</p>
+                            </div>
+                        </div>
+                                                <div class="line">
+                            <div class="tit">Гражданство: </div>
+                            <div class="descr">
+                                <p>${(result[index].citizenship ? result[index].citizenship : 'не известно')}</p>
+                            </div>
+                        </div>
+                                                <div class="line films">
+                            <div class="tit">Фильмы</div>
+                            <div class="descr">
+                                
+                            </div>
+                        </div>
+                                            </div>
                                          `
 
 
@@ -157,63 +162,64 @@ const characters = () => {
                         <img src="${result[index].photo}" alt="">
                     </div>
                     <div class="info_block">
-                        <div class="line">
-                            <div class="tit">Актер: </div>
-                            <div class="descr">
-                                <p>${result[index].actors}</p>
-                            </div>
-                        </div>
-                        <div class="line">
-                            <div class="tit">Год рождения: </div>
-                            <div class="descr">
-                                <p>${(result[index].birthDay ? result[index].birthDay : 'не известен')}</p>
-                            </div>
-                        </div>
-                        <div class="line">
-                            <div class="tit">Год смерти: </div>
-                            <div class="descr">
-                                <p>${result[index].status !== 'alive' ? result[index].deathDay : 'Персонаж жив'}</p>
-                            </div>
-                        </div>
-                        <div class="line">
-                            <div class="tit">Пол: </div>
-                            <div class="descr">
-                                <p>${result[index].gender}</p>
-                            </div>
-                        </div>
-                        
-                        <div class="line">
+                         <div class="line">
                             <div class="tit">Имя: </div>
                             <div class="descr">
                                 <p>${result[index].name}</p>
                             </div>
                         </div>
-                        
-                        <div class="line films">
-                            <div class="tit">Фильмы</div>
+                         <div class="line">
+                            <div class="tit">Реальное имя: </div>
                             <div class="descr">
-                                
+                                <p>${result[index].realName}</p>
                             </div>
                         </div>
-                        
-                        
-                        
-                        <div class="line">
+                         <div class="line">
+                            <div class="tit">Пол: </div>
+                            <div class="descr">
+                                <p>${result[index].gender}</p>
+                            </div>
+                        </div>
+                         <div class="line">
+                            <div class="tit">Год рождения: </div>
+                            <div class="descr">
+                                <p>${(result[index].birthDay ? result[index].birthDay : 'не известен')}</p>
+                            </div>
+                        </div>
+                         <div class="line">
+                            <div class="tit">Статус: </div>
+                            <div class="descr">
+                                <p>${result[index].status}</p>
+                            </div>
+                        </div>
+                         <div class="line">
+                            <div class="tit">Год смерти: </div>
+                            <div class="descr">
+                                <p>${result[index].status !== 'alive' ? result[index].deathDay : 'Персонаж жив'}</p>
+                            </div>
+                        </div>
+                         <div class="line">
                             <div class="tit">Разновидность: </div>
                             <div class="descr">
                                 <p>${result[index].species}</p>
                             </div>
                         </div>
-                        <div class="line">
+                         <div class="line">
+                            <div class="tit">Актер: </div>
+                            <div class="descr">
+                                <p>${result[index].actors}</p>
+                            </div>
+                        </div>
+                         <div class="line">
                             <div class="tit">Гражданство: </div>
                             <div class="descr">
                                 <p>${(result[index].citizenship ? result[index].citizenship : 'не известно')}</p>
                             </div>
                         </div>
-                        <div class="line">
-                            <div class="tit">Статус: </div>
+                         <div class="line films">
+                            <div class="tit">Фильмы</div>
                             <div class="descr">
-                                <p>${result[index].status}</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -242,3 +248,4 @@ const characters = () => {
 }
 
 export default characters;
+
